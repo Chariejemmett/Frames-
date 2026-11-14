@@ -2,18 +2,19 @@
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; background: var(--color-ground, #ffffff); }
     #ksl-root, #ksl-main, #ksl-tagline { position: absolute; inset: 0; }
+    #ksl-tagline { clip-path: inset(713.2px 0 0 0); }
     #ksl-root .piece { position: absolute; transform-origin: 50% 50%; }
     #ksl-root .piece svg { display: block; width: 100%; height: 100%; overflow: visible; }
   </style>
-  <!-- Settle: letters fade in slightly large and settle; the K's leg streaks in last -->
+  <!-- Settle: letters fade in slightly large and settle; the K's leg swings in last; the tagline drops -->
   <div id="root" data-composition-id="logo" data-width="1920" data-height="1080" data-layout-allow-overflow>
     <div id="ksl-root">
       <div id="ksl-main">
             <div id="ksl-k" class="piece main" style="left:401.72px;top:279.84px;width:398.8px;height:403.68px"><svg viewBox="24.09 32.34 49.85 50.46" aria-hidden="true"><polygon fill="var(--color-blue)" points="65.34 40.69 51.18 54.22 36.11 68.39 36.09 81.8 25.17 81.8 25.13 56.91 25.1 40.9 25.09 33.34 36.15 33.34 36.13 45.06 36.14 54.05 57.57 33.34 72.94 33.36 65.34 40.69"/></svg></div>
-            <div id="ksl-leg-g3" class="piece ghost" style="left:552.36px;top:471.52px;width:261.92px;height:212.0px"><svg viewBox="42.92 56.30 32.74 26.50" aria-hidden="true"><polygon fill="var(--color-navy)" points="74.66 81.8 60.1 81.79 54.27 75.64 43.92 64.81 51.91 57.3 58.26 64.22 74.66 81.8"/></svg></div>
-            <div id="ksl-leg-g2" class="piece ghost" style="left:552.36px;top:471.52px;width:261.92px;height:212.0px"><svg viewBox="42.92 56.30 32.74 26.50" aria-hidden="true"><polygon fill="var(--color-navy)" points="74.66 81.8 60.1 81.79 54.27 75.64 43.92 64.81 51.91 57.3 58.26 64.22 74.66 81.8"/></svg></div>
-            <div id="ksl-leg-g1" class="piece ghost" style="left:552.36px;top:471.52px;width:261.92px;height:212.0px"><svg viewBox="42.92 56.30 32.74 26.50" aria-hidden="true"><polygon fill="var(--color-navy)" points="74.66 81.8 60.1 81.79 54.27 75.64 43.92 64.81 51.91 57.3 58.26 64.22 74.66 81.8"/></svg></div>
-            <div id="ksl-leg" class="piece main" style="left:552.36px;top:471.52px;width:261.92px;height:212.0px"><svg viewBox="42.92 56.30 32.74 26.50" aria-hidden="true"><polygon fill="var(--color-navy)" points="74.66 81.8 60.1 81.79 54.27 75.64 43.92 64.81 51.91 57.3 58.26 64.22 74.66 81.8"/></svg></div>
+            <div id="ksl-leg-g3" class="piece ghost" style="left:552.36px;top:471.52px;width:261.92px;height:212.0px;transform-origin:15.3% 17.9%"><svg viewBox="42.92 56.30 32.74 26.50" aria-hidden="true"><polygon fill="var(--color-navy)" points="74.66 81.8 60.1 81.79 54.27 75.64 43.92 64.81 51.91 57.3 58.26 64.22 74.66 81.8"/></svg></div>
+            <div id="ksl-leg-g2" class="piece ghost" style="left:552.36px;top:471.52px;width:261.92px;height:212.0px;transform-origin:15.3% 17.9%"><svg viewBox="42.92 56.30 32.74 26.50" aria-hidden="true"><polygon fill="var(--color-navy)" points="74.66 81.8 60.1 81.79 54.27 75.64 43.92 64.81 51.91 57.3 58.26 64.22 74.66 81.8"/></svg></div>
+            <div id="ksl-leg-g1" class="piece ghost" style="left:552.36px;top:471.52px;width:261.92px;height:212.0px;transform-origin:15.3% 17.9%"><svg viewBox="42.92 56.30 32.74 26.50" aria-hidden="true"><polygon fill="var(--color-navy)" points="74.66 81.8 60.1 81.79 54.27 75.64 43.92 64.81 51.91 57.3 58.26 64.22 74.66 81.8"/></svg></div>
+            <div id="ksl-leg" class="piece main" style="left:552.36px;top:471.52px;width:261.92px;height:212.0px;transform-origin:15.3% 17.9%"><svg viewBox="42.92 56.30 32.74 26.50" aria-hidden="true"><polygon fill="var(--color-navy)" points="74.66 81.8 60.1 81.79 54.27 75.64 43.92 64.81 51.91 57.3 58.26 64.22 74.66 81.8"/></svg></div>
             <div id="ksl-s" class="piece main" style="left:776.38px;top:279.67px;width:381.35px;height:404.35px"><svg viewBox="70.92 32.32 47.67 50.54" aria-hidden="true"><path fill="var(--color-blue)" d="M115.95,73.86c-1.58,3.09-4.35,5.47-7.6,6.68-4.64,1.72-9.88,1.27-14.74,1.27h-8.01c-2.2,0-4.39,0-6.59,0-.12,0-2.26,0-2.26,0,0,0,0-9.79,0-9.79h.74c.66,0,1.33,0,1.99,0,.97,0,1.95,0,2.92,0,1.18,0,2.35,0,3.53,0,1.27,0,2.54,0,3.82,0,3.58,0,7.16.04,10.73.06,1.63,0,3.35-.23,4.66-1.2,1.69-1.24,2.41-3.62,1.78-5.63-1.07-3.41-4.17-3.78-7.19-3.92l-10.49.02c-2.59,0-5.06-.16-7.55-.84-4.17-1.14-7.55-4.16-8.98-8.27-1.63-4.7-.7-10.07,2.53-13.88,2.81-3.33,7.08-5.08,11.42-5.04h28.09s0,9.4,0,9.4h-27.54c-2.86.26-4.93,2.79-4.38,5.63.28,1.45,1.3,2.69,2.62,3.34s2.68.5,4.07.51c1.3,0,2.6.02,3.91.02l8,.15c1.67.03,3.22.21,4.87.5,5.49.97,9.92,5.95,11.01,11.29.66,3.26.14,6.74-1.37,9.69Z"/></svg></div>
             <div id="ksl-l" class="piece main" style="left:1158.12px;top:279.84px;width:360.16px;height:403.68px"><svg viewBox="118.64 32.34 45.02 50.46" aria-hidden="true"><polygon fill="var(--color-blue)" points="162.66 72.01 162.66 81.79 140.06 81.79 119.77 81.8 119.73 65.36 119.64 33.34 130.79 33.35 130.73 64.49 130.72 72.01 162.66 72.01"/></svg></div>
       </div>
@@ -47,25 +48,27 @@
 
       const order = ["#ksl-k", "#ksl-s", "#ksl-l"];
       gsap.set(order, { opacity: 0, scale: 1.25, filter: "blur(10px)" });
-      // the tagline starts spread wide and tightens toward its centre
-      const TCX = 960;
-      gsap.set(tags, { opacity: 0, x: (i, el) => (+el.dataset.cx - TCX) * 0.6 });
       // K, S and L fade in large and settle to size
       order.forEach((sel, i) => ft(sel, { opacity: 0, scale: 1.25, filter: "blur(10px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.1, ease: "power3.out" }, 0.3 + i * 0.2));
-      // the K's navy leg streaks in last and completes the K
+      // the K's navy leg swings down into place last and completes the K
       
-      gsap.set("#ksl-leg", { opacity: 0, x: 782.4, y: 623.6 });
-      ft("#ksl-leg", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 1.2);
-      ft("#ksl-leg", { x: 782.4, y: 623.6 }, { x: 0, y: 0, duration: 0.9, ease: "expo.out" }, 1.2);
-      [[1, 0.06, 0.4], [2, 0.12, 0.25], [3, 0.18, 0.14]].forEach(([g, lag, op]) => {
+      // the leg: hinged where it meets the K; it swings down from raised, passes its rest by 6 degrees and settles once
+      gsap.set("#ksl-leg", { opacity: 0, rotation: -130 });
+      ft("#ksl-leg", { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "none" }, 1.2);
+      ft("#ksl-leg", { rotation: -130 }, { rotation: 6, duration: 0.6, ease: "power2.out" }, 1.2);
+      ft("#ksl-leg", { rotation: 6 }, { rotation: 0, duration: 0.4, ease: "power2.inOut" }, 1.2 + 0.6);
+      [[1, 0.05, 0.4], [2, 0.1, 0.25], [3, 0.15, 0.14]].forEach(([g, lag, op]) => {
         const el = "#ksl-leg-g" + g;
-        gsap.set(el, { opacity: 0, x: 782.4, y: 623.6 });
-        ft(el, { x: 782.4, y: 623.6 }, { x: 0, y: 0, duration: 0.9, ease: "expo.out" }, 1.2 + lag);
-        ft(el, { opacity: 0 }, { opacity: op, duration: 0.08, ease: "none" }, 1.2 + lag);
-        ft(el, { opacity: op }, { opacity: 0, duration: 0.45, ease: "power2.out" }, 1.2 + lag + 0.2);
+        gsap.set(el, { opacity: 0, rotation: -130 });
+        ft(el, { rotation: -130 }, { rotation: 6, duration: 0.6, ease: "power2.out" }, 1.2 + lag);
+        ft(el, { rotation: 6 }, { rotation: 0, duration: 0.4, ease: "power2.inOut" }, 1.2 + lag + 0.6);
+        ft(el, { opacity: 0 }, { opacity: op, duration: 0.1, ease: "none" }, 1.2 + lag);
+        ft(el, { opacity: op }, { opacity: 0, duration: 0.4, ease: "power2.out" }, 1.2 + lag + 0.25);
       });
-      // the tagline fades in as its letter spacing closes up
-      tags.forEach((el) => ft(el, { opacity: 0, x: (+el.dataset.cx - TCX) * 0.6 }, { opacity: 1, x: 0, duration: 1.3, ease: "power3.out" }, 2.25));
+      // the tagline drops in letter by letter
+      
+      gsap.set(tags, { opacity: 0, y: -70 });
+      tags.forEach((el, i) => ft(el, { opacity: 0, y: -70 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 2.25 + i * 0.04 + (i >= 10 ? 0.1 : 0)));
 
       window.__timelines["logo"] = tl;
     })();
