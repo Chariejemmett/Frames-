@@ -61,19 +61,26 @@
       const big = ["#cg-b-g1", "#cg-b-g2", "#cg-b-g3"];
 
       const A2 = 4.2; // act 2 (the Fiverr-style build) starts on the drop, where the reference's clean pass starts
+      // the soundtrack repeats two bars (5.199-7.318 s) so the text loads one letter per beat;
+      // everything after the text keeps its original hits, shifted by those two bars
+      const BEAT = 0.26483, B0 = 5.199, SHIFT = 8 * BEAT;
+      const beat = (k) => B0 + k * BEAT;
+      const S2 = A2 + SHIFT;
 
       // ---- the small dot: one pure function of time drives its path, squash and trail
       const HOME = [976.0, 584.5];
       const BASE = 585 - 15.5;  // dot centre resting on the baseline
       // [t0, t1, from, to, arc height (px, 0 = a fall)]
+      // gaps between the letters of CHARLIE (x of the dot's centre as each letter grows up behind it)
+      const GAP = [384, 476, 577, 664, 740, 781, 891];
+      // [t0, t1, from, to, arc height (px)]
       const HOPS = [
-        [0.08, 0.85, HOME, [380, BASE], 380],   // out of the G's slot, one long arc left to where the bouncing starts
-        [0.85, 1.05, [380, BASE], [572, BASE], 110],
-        [1.05, 1.24, [572, BASE], [730, BASE], 95],
-        [1.24, 1.50, [730, BASE], HOME, 170],
-        [2.20, 2.55, HOME, [2060, 330], 200],
-      ].map(([t0, t1, p, q, h]) => [t0 + A2, t1 + A2, p, q, h]);
-      const TOUCH = [0.08, 0.85, 1.05, 1.24, 1.50].map((t) => t + A2);  // 0.08: push-off from the slot
+        [4.28, beat(0), HOME, [GAP[0], BASE], 380],  // out of the G's slot, one long arc left to where the bouncing starts
+        ...GAP.slice(1).map((x, k) => [beat(k), beat(k + 1), [GAP[k], BASE], [x, BASE], 70]),  // one hop per beat, one letter per hop
+        [beat(6), beat(8), [GAP[6], BASE], HOME, 150],  // two beats: a high hop back into the G
+        [S2 + 2.20, S2 + 2.55, HOME, [2060, 330], 200],
+      ];
+      const TOUCH = [4.28, ...GAP.map((_, k) => beat(k)), beat(8)];
       function dotAt(t) {
         if (t < HOPS[0][0]) return HOPS[0][2];
         let last = HOPS[0][2];
@@ -103,7 +110,7 @@
         for (let i = 2; i <= 11; i++) { const p = dotAt(t - i * 0.01); pts.push(p[0].toFixed(1) + " " + p[1].toFixed(1)); }
         trailEl.setAttribute("d", "M" + pts.join(" L"));
       }
-      const END = 9.7;
+      const END = 11.81;
       const clock = { t: 0 };
       tl.fromTo(clock, { t: 0 }, { t: END, duration: END, ease: "none", immediateRender: false, onUpdate: () => render(clock.t) }, 0);
 
@@ -163,26 +170,27 @@
       tl.set(small, { opacity: 1 }, A2);
       tl.set(dotEl, { opacity: 1 }, A2);
 
-      // ======== ACT 2 (4.2-7.5 s): the Fiverr-style build, on the reference's own hits ========
-      const POP = [0.82, 0.88, 1.02, 1.08, 1.21, 1.26, 1.31, 1.52, 1.56, 1.60, 1.64, 1.68, 1.72].map((t) => t + A2);
+      // ======== ACT 2 (4.2-9.65 s): the Fiverr-style build, on the reference's own hits ========
+      // CHARLIE: each letter grows as the dot lands beside it; STUDIO: a cascade at half-beat steps after the dot lands in the G
+      const POP = [...GAP.map((_, k) => beat(k) - 0.02), ...[0, 1, 2, 3, 4, 5].map((i) => beat(8) + 0.02 + i * BEAT / 2)];
       letters.forEach((el, i) => ft(el, { scaleX: 0.5, scaleY: 0, y: 10 }, { scaleX: 1, scaleY: 1, y: 0, duration: 0.3, ease: "back.out(2.2)" }, POP[i]));
-      ft(small, { y: 0 }, { y: 5, duration: 0.05, ease: "power2.out" }, A2 + 1.5);
-      ft(small, { y: 5 }, { y: 0, duration: 0.3, ease: "elastic.out(1, 0.5)" }, A2 + 1.55);
-      tl.set(dotEl, { opacity: 0 }, A2 + 2.56);
+      ft(small, { y: 0 }, { y: 5, duration: 0.05, ease: "power2.out" }, beat(8));
+      ft(small, { y: 5 }, { y: 0, duration: 0.3, ease: "elastic.out(1, 0.5)" }, beat(8) + 0.05);
+      tl.set(dotEl, { opacity: 0 }, S2 + 2.56);
       const DY = -125.0;
       const X_AT = (wx) => wx - (912.0 + -540);
-      ft("#cg-disc", { x: X_AT(2120), y: DY, scale: 0.4 }, { x: X_AT(1900), y: DY, scale: 1, duration: 0.2, ease: "power2.out" }, A2 + 2.6);
-      ft("#cg-disc", { x: X_AT(1900) }, { x: X_AT(420), duration: 0.15, ease: "power2.in" }, A2 + 2.8);
-      const passAt = (cx) => A2 + (cx >= 1900 ? 2.8 : cx <= 420 ? 2.95 : 2.8 + 0.15 * Math.sqrt((1900 - cx) / 1480));
+      ft("#cg-disc", { x: X_AT(2120), y: DY, scale: 0.4 }, { x: X_AT(1900), y: DY, scale: 1, duration: 0.2, ease: "power2.out" }, S2 + 2.6);
+      ft("#cg-disc", { x: X_AT(1900) }, { x: X_AT(420), duration: 0.15, ease: "power2.in" }, S2 + 2.8);
+      const passAt = (cx) => S2 + (cx >= 1900 ? 2.8 : cx <= 420 ? 2.95 : 2.8 + 0.15 * Math.sqrt((1900 - cx) / 1480));
       letters.forEach((el) => tl.set(el, { opacity: 0 }, passAt(+el.dataset.cx)));
       tl.set(small, { opacity: 0 }, passAt(993.5));
       const DOT_S = 0.2588;
-      ft("#cg-disc", { x: X_AT(420), y: DY, scale: 1 }, { x: 0, y: 0, scale: DOT_S, duration: 0.17, ease: "power3.inOut" }, A2 + 2.95);
-      big.forEach((el, i) => ft(el, { scale: 0.3 }, { scale: 1, duration: 0.3, ease: "back.out(1.7)" }, A2 + 2.95 + i * 0.03));
-      ft("#cg-big", { x: -540 }, { x: 0, duration: 0.33, ease: "power3.out" }, A2 + 3.0);
+      ft("#cg-disc", { x: X_AT(420), y: DY, scale: 1 }, { x: 0, y: 0, scale: DOT_S, duration: 0.17, ease: "power3.inOut" }, S2 + 2.95);
+      big.forEach((el, i) => ft(el, { scale: 0.3 }, { scale: 1, duration: 0.3, ease: "back.out(1.7)" }, S2 + 2.95 + i * 0.03));
+      ft("#cg-big", { x: -540 }, { x: 0, duration: 0.33, ease: "power3.out" }, S2 + 3.0);
 
-      // ======== ENDING (8.4-9.7 s): the icon punches on the last two beats, as the big G did in act 1, then holds ========
-      [[8.40, 1.05], [8.92, 1.03]].forEach(([at, k]) => {
+      // ======== ENDING (10.5-11.8 s): the icon punches on the last two beats, as the big G did in act 1, then holds ========
+      [[8.40 + SHIFT, 1.05], [8.92 + SHIFT, 1.03]].forEach(([at, k]) => {
         ft("#cg-big", { scale: 1 }, { scale: k, duration: 0.04, ease: "power2.out" }, at);
         ft("#cg-big", { scale: k }, { scale: 1, duration: 0.22, ease: "power2.out" }, at + 0.04);
       });

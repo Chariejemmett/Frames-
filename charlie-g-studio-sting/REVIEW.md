@@ -1,6 +1,6 @@
 # Review: Charlie G Studio logo animation
 
-**Output:** `renders/charlie-g-studio-logo.mp4`, 1920 x 1080, 60 fps, 9.7 s (582 frames), H.264 + AAC.
+**Output:** `renders/charlie-g-studio-logo.mp4`, 1920 x 1080, 60 fps, 11.81 s (709 frames), H.264 + AAC.
 
 ## Creative calls
 - Modelled on the Fiverr logo animation in the supplied screen recording (its clean half, from 4.20 s), beat for beat:
@@ -14,11 +14,14 @@
 - Extended to the length of the supplied video. A new first act plays over the soundtrack's quiet build-up: the dot
   drops in alone, the G's three blocks arrive one by one, the big G punches on two hits, its pieces pull apart as the
   music builds and snap together on the drop, and the G shrinks into its place in the wordmark. The dot
-  then hops out of the G in one long arc to where it starts bouncing the letters in; it never leaves the frame. From there the original animation plays on its original hits. On the last two hits the icon punches again.
+  then hops out of the G in one long arc to where it starts bouncing the letters in; it never leaves the frame. The text then loads one letter per beat: CHARLIE one hop per beat (5.2-6.8 s), STUDIO at half-beat
+  steps once the dot is back in the G. Everything after that plays as before, on the same hits. On the last two hits the icon punches again.
 
 ## Sound
 - The soundtrack is the reference's whole audio, 0-9.70 s of the screen recording, in
-  `assets/audio/reference-soundtrack.wav`, with a 0.45 s fade-out. Its effects are mixed into the music, so they
+  `assets/audio/reference-soundtrack.wav`, with two bars (5.199-7.318 s) played twice to make room for the slower
+  text, and a 0.45 s fade-out. The repeat is joined just before a beat onset with a 6 ms crossfade; measured, the
+  beats after the join land within 6 ms of the grid. Its effects are mixed into the music, so they
   could not be separated; instead every beat of this animation sits at the reference's time minus 4.20 s, so its
   hits land on the matching moments.
 - Rights: the track comes from someone else's TikTok post and is likely a licensed or commercial song. Fine for a
