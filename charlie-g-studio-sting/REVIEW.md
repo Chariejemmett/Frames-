@@ -23,10 +23,9 @@
   - keyboard clacks (five single keystrokes cut from github.com/6m1w/claude-sound-fx): the dot's landings in act 1,
     one clack per letter as CHARLIE and STUDIO load in, the punches and the snap;
   - Star Trek interface sounds from the same repository: a beep as each block locks in, a hail when the G is complete
-    and when the dot lands in it, a chirp as the dot flies off, "program complete"
-    as the disc turns into the icon;
+    and when the dot lands in it, a chirp as the dot flies off;
   - from the HyperFrames bundle (Pixabay licence): a whoosh for the disc sweep, and a riser that climbs through the
-    pull-apart (2.73-3.98 s, its steepest 1.25 s) and is cut off by a sub-bass hit as the pieces snap together.
+    pull-apart (2.73-3.98 s, its steepest 1.25 s) and is cut off by a sub-bass hit as the pieces snap together; the same hit, quieter, as the disc turns into the icon.
 - Rights: the repository is MIT for its code, but its audio has no stated source; the Trek sounds come from the Star
   Trek franchise. Replace them with cleared effects before publishing or client use.
 - The rest of the repository is voice clips of film, game and anime characters (JARVIS, GLaDOS, Pikachu and others)
@@ -35,7 +34,7 @@
 ## Measured
 - `hyperframes check`: ok, 0 errors. Lockup at 2.0 s vs the logo PNG: mean difference 0.41/255; icon at 4.0 s vs
   the icon PNG: 0.24/255 (remaining differences are edge pixels from the half-pixel placement and PNG softness).
-- Render audio: -20.5 LUFS integrated (sparse effects with silence between them), -1.2 dBTP, no clipping;
+- Render audio: -20.2 LUFS integrated (sparse effects with silence between them), -1.2 dBTP, no clipping;
   onsets measured in the render match the picture times. Measured, not heard.
 
 ## Kept on purpose
