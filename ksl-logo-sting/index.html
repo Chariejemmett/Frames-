@@ -1,0 +1,67 @@
+<!doctype html>
+<html
+  lang="en"
+  data-composition-variables='[
+    {"id":"color-ground","type":"color","label":"Background","default":"#FFFFFF"},
+    {"id":"color-blue","type":"color","label":"Light blue","default":"#6FBFE5"},
+    {"id":"color-navy","type":"color","label":"Navy","default":"#0D1D27"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--color-ground, #ffffff); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="7.5" data-width="1920" data-height="1080"
+      data-fps="60" data-motion-blur="on" data-motion-blur-shutter="360">
+      <div id="logo" data-composition-id="logo" data-composition-src="compositions/logo.html" data-start="0" data-duration="7.5"
+        data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <!-- sound effects from the HyperFrames bundle (Pixabay licence), each placed one frame after its picture -->
+      <audio id="sfx-k-whoosh" class="clip" data-start="0.339" data-duration="0.518" data-track-index="2" data-volume="0.55" data-playback-rate="1.1" src="assets/sfx/whoosh-short.mp3"></audio>
+      <audio id="sfx-k-click" class="clip" data-start="0.444" data-duration="0.25" data-track-index="3" data-volume="0.5" src="assets/sfx/click.mp3"></audio>
+      <audio id="sfx-k-thump" class="clip" data-start="0.468" data-duration="0.35" data-track-index="4" data-volume="0.14" data-fade-out="0.28" src="assets/sfx/impact-bass-1.mp3"></audio>
+      <audio id="sfx-leg-whoosh" class="clip" data-start="0.615" data-duration="0.57" data-track-index="5" data-volume="0.75" src="assets/sfx/whoosh-short.mp3"></audio>
+      <audio id="sfx-leg-click" class="clip" data-start="0.81" data-duration="0.227" data-track-index="3" data-volume="0.5" data-playback-rate="1.1" src="assets/sfx/click.mp3"></audio>
+      <audio id="sfx-leg-thump" class="clip" data-start="0.828" data-duration="0.35" data-track-index="4" data-volume="0.14" data-fade-out="0.28" src="assets/sfx/impact-bass-1.mp3"></audio>
+      <audio id="sfx-s-whoosh" class="clip" data-start="1.007" data-duration="0.633" data-track-index="2" data-volume="0.8" data-playback-rate="0.9" src="assets/sfx/whoosh-short.mp3"></audio>
+      <audio id="sfx-s-click" class="clip" data-start="1.286" data-duration="0.278" data-track-index="3" data-volume="0.5" data-playback-rate="0.9" src="assets/sfx/click.mp3"></audio>
+      <audio id="sfx-s-thump" class="clip" data-start="1.318" data-duration="0.35" data-track-index="4" data-volume="0.14" data-fade-out="0.28" src="assets/sfx/impact-bass-1.mp3"></audio>
+      <audio id="sfx-l-whoosh" class="clip" data-start="1.602" data-duration="0.475" data-track-index="3" data-volume="0.8" data-playback-rate="1.2" src="assets/sfx/whoosh-short.mp3"></audio>
+      <audio id="sfx-l-click" class="clip" data-start="1.804" data-duration="0.25" data-track-index="2" data-volume="0.6" src="assets/sfx/click.mp3"></audio>
+      <audio id="sfx-ksl-hit" class="clip" data-start="1.828" data-duration="0.6" data-track-index="4" data-volume="0.24" data-fade-out="0.45" src="assets/sfx/impact-bass-1.mp3"></audio>
+      <audio id="sfx-punch-thump" class="clip" data-start="2.088" data-duration="0.3" data-track-index="2" data-volume="0.13" data-fade-out="0.22" src="assets/sfx/impact-bass-1.mp3"></audio>
+      <audio id="sfx-punch-click" class="clip" data-start="2.051" data-duration="0.294" data-track-index="5" data-volume="0.6" data-playback-rate="0.85" src="assets/sfx/click.mp3"></audio>
+      <audio id="sfx-riser" class="clip" data-start="2.27" data-duration="1.25" data-track-index="3" data-volume="0.4" data-media-start="1.75" data-fade-out="0.02" src="assets/sfx/riser.mp3"></audio>
+      <audio id="sfx-snap-hit" class="clip" data-start="3.488" data-duration="0.9" data-track-index="2" data-volume="0.22" data-fade-out="0.6" src="assets/sfx/impact-bass-1.mp3"></audio>
+      <audio id="sfx-snap-click" class="clip" data-start="3.464" data-duration="0.25" data-track-index="4" data-volume="0.8" src="assets/sfx/click.mp3"></audio>
+      <audio id="sfx-shine" class="clip" data-start="3.65" data-duration="1.8" data-track-index="3" data-volume="0.5" src="assets/sfx/sparkle.mp3"></audio>
+      <audio id="sfx-type-00" class="clip" data-start="4.331" data-duration="0.25" data-track-index="4" data-volume="1.0" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-01" class="clip" data-start="4.389" data-duration="0.223" data-track-index="2" data-volume="1.0" data-playback-rate="1.12" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-02" class="clip" data-start="4.424" data-duration="0.272" data-track-index="5" data-volume="1.0" data-playback-rate="0.92" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-03" class="clip" data-start="4.481" data-duration="0.25" data-track-index="6" data-volume="1.0" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-04" class="clip" data-start="4.539" data-duration="0.223" data-track-index="7" data-volume="1.0" data-playback-rate="1.12" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-05" class="clip" data-start="4.574" data-duration="0.272" data-track-index="8" data-volume="1.0" data-playback-rate="0.92" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-06" class="clip" data-start="4.631" data-duration="0.25" data-track-index="2" data-volume="1.0" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-07" class="clip" data-start="4.689" data-duration="0.223" data-track-index="4" data-volume="1.0" data-playback-rate="1.12" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-08" class="clip" data-start="4.724" data-duration="0.272" data-track-index="5" data-volume="1.0" data-playback-rate="0.92" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-09" class="clip" data-start="4.781" data-duration="0.25" data-track-index="6" data-volume="1.0" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-10" class="clip" data-start="4.969" data-duration="0.223" data-track-index="2" data-volume="1.0" data-playback-rate="1.12" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-11" class="clip" data-start="5.004" data-duration="0.272" data-track-index="4" data-volume="1.0" data-playback-rate="0.92" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-12" class="clip" data-start="5.061" data-duration="0.25" data-track-index="5" data-volume="1.0" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-13" class="clip" data-start="5.119" data-duration="0.223" data-track-index="6" data-volume="1.0" data-playback-rate="1.12" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-14" class="clip" data-start="5.154" data-duration="0.272" data-track-index="7" data-volume="1.0" data-playback-rate="0.92" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-15" class="clip" data-start="5.211" data-duration="0.25" data-track-index="2" data-volume="1.0" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-16" class="clip" data-start="5.269" data-duration="0.223" data-track-index="8" data-volume="1.0" data-playback-rate="1.12" src="assets/sfx/key-press.mp3"></audio>
+      <audio id="sfx-type-17" class="clip" data-start="5.304" data-duration="0.272" data-track-index="4" data-volume="1.0" data-playback-rate="0.92" src="assets/sfx/key-press.mp3"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
