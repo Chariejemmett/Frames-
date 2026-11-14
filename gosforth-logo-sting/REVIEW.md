@@ -14,14 +14,14 @@
 - Sound: Pixabay-licensed effects bundled with HyperFrames on each visible action (whoosh in and out, taps on
   landings, a pop when the dot appears and when it lands home). No music.
 - The wordmark's sound is the "Woosh" the person supplied, cut from their sound-effects reel (4.195-4.525 s of
-  the source) into `assets/sfx/woosh-reference.wav`. It plays once per word: as GOSFORTH grows in (2.48 s) and as
-  ROOFING follows (2.91 s, 6% faster for variation). It replaced 15 per-letter key ticks.
+  the source) into `assets/sfx/woosh-reference.wav`. It plays once for the whole text build, at 0.8x speed so it
+  sweeps a little longer (0.41 s), peaking at 2.6 s as the first letters grow in.
 
 ## Measured
 - The logo is the supplied PNG traced to vectors, one path per piece. The final lockup at 5.0 s against the PNG:
   mean difference 0.30/255; remaining differences are anti-aliased edges.
 - `hyperframes check`: ok, 0 errors. Every sound sits one frame after its picture (peaks measured per file).
-- Render audio: -19.1 LUFS integrated, -1.1 dBTP, no clipping. Measured, not heard.
+- Render audio: -18.9 LUFS integrated, -1.1 dBTP, no clipping. Measured, not heard.
 
 ## Kept on purpose
 - `first_frame_empty`: the sting starts and ends on the empty ground, like the reference, so it loops.
