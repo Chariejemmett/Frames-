@@ -18,19 +18,24 @@
   steps once the dot is back in the G. Everything after that plays as before, on the same hits. On the last two hits the icon punches again.
 
 ## Sound
-- The soundtrack is the reference's whole audio, 0-9.70 s of the screen recording, in
-  `assets/audio/reference-soundtrack.wav`, with two bars (5.199-7.318 s) played twice to make room for the slower
-  text, and a 0.45 s fade-out. The repeat is joined just before a beat onset with a 6 ms crossfade; measured, the
-  beats after the join land within 6 ms of the grid. Its effects are mixed into the music, so they
-  could not be separated; instead every beat of this animation sits at the reference's time minus 4.20 s, so its
-  hits land on the matching moments.
-- Rights: the track comes from someone else's TikTok post and is likely a licensed or commercial song. Fine for a
-  private draft; replace it before publishing or client use.
+- No music. 33 sound effects, one per visible action, each placed so its hit lands one frame after its picture
+  (credits in `assets/sfx/CREDITS.md`):
+  - keyboard clacks (five single keystrokes cut from github.com/6m1w/claude-sound-fx): the dot's landings in act 1,
+    one clack per letter as CHARLIE and STUDIO load in, the punches and the snap;
+  - Star Trek interface sounds from the same repository: a beep as each block locks in, a hail when the G is complete
+    and when the dot lands in it, a data stream under the pull-apart, a chirp as the dot flies off, "program complete"
+    as the disc turns into the icon;
+  - one whoosh from the HyperFrames bundle for the disc sweep (the repository has none).
+- Rights: the repository is MIT for its code, but its audio has no stated source; the Trek sounds come from the Star
+  Trek franchise. Replace them with cleared effects before publishing or client use.
+- The rest of the repository is voice clips of film, game and anime characters (JARVIS, GLaDOS, Pikachu and others)
+  and was not used.
 
 ## Measured
 - `hyperframes check`: ok, 0 errors. Lockup at 2.0 s vs the logo PNG: mean difference 0.41/255; icon at 4.0 s vs
   the icon PNG: 0.24/255 (remaining differences are edge pixels from the half-pixel placement and PNG softness).
-- Render audio: -13.8 LUFS integrated, -1.0 dBTP, no clipping. Measured, not heard.
+- Render audio: -21.5 LUFS integrated (sparse effects with silence between them), -1.9 dBTP, no clipping;
+  onsets measured in the render match the picture times. Measured, not heard.
 
 ## Kept on purpose
 - `first_frame_empty`: the film opens on the empty ground; the dot drops in at 0.3 s.

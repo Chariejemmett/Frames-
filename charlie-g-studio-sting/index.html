@@ -39,8 +39,41 @@
         data-width="1920"
         data-height="1080"
       ></div>
-      <!-- the reference animation's own soundtrack: the whole supplied screen recording (0-9.70 s), with bars 5.199-7.318 s played twice -->
-      <audio id="soundtrack" class="clip" data-start="0" data-duration="11.81" data-track-index="2" data-volume="1" src="assets/audio/reference-soundtrack.wav"></audio>
+      <!-- sound effects, each placed one frame after the picture it belongs to: keyboard clacks and Star Trek
+           interface sounds from github.com/6m1w/claude-sound-fx, one whoosh from the HyperFrames bundle -->
+      <audio id="sfx-a1-dot-land" class="clip" data-start="0.609" data-duration="0.13" data-track-index="3" data-volume="0.9" src="assets/sfx/key-4.wav"></audio>
+      <audio id="sfx-a1-dot-hop-1" class="clip" data-start="0.969" data-duration="0.13" data-track-index="3" data-volume="0.5" src="assets/sfx/key-2.wav"></audio>
+      <audio id="sfx-a1-block-left" class="clip" data-start="0.943" data-duration="0.1" data-track-index="4" data-volume="0.35" src="assets/sfx/trek-beep5.mp3"></audio>
+      <audio id="sfx-a1-dot-hop-2" class="clip" data-start="1.269" data-duration="0.13" data-track-index="3" data-volume="0.6" src="assets/sfx/key-3.wav"></audio>
+      <audio id="sfx-a1-block-top" class="clip" data-start="1.768" data-duration="0.118" data-track-index="3" data-volume="0.35" data-playback-rate="0.85" src="assets/sfx/trek-beep5.mp3"></audio>
+      <audio id="sfx-a1-dot-hop-3" class="clip" data-start="2.029" data-duration="0.13" data-track-index="3" data-volume="0.5" src="assets/sfx/key-5.wav"></audio>
+      <audio id="sfx-a1-g-complete" class="clip" data-start="2.113" data-duration="0.34" data-track-index="4" data-volume="0.45" src="assets/sfx/trek-hail.mp3"></audio>
+      <audio id="sfx-a1-punch-1" class="clip" data-start="2.309" data-duration="0.13" data-track-index="3" data-volume="1.0" src="assets/sfx/key-4.wav"></audio>
+      <audio id="sfx-a1-punch-2" class="clip" data-start="2.609" data-duration="0.13" data-track-index="3" data-volume="1.0" src="assets/sfx/key-2.wav"></audio>
+      <audio id="sfx-a1-pull-apart" class="clip" data-start="2.557" data-duration="1.44" data-track-index="4" data-volume="0.4" data-fade-out="0.3" src="assets/sfx/trek-data-transmitted.mp3"></audio>
+      <audio id="sfx-a1-snap" class="clip" data-start="3.989" data-duration="0.13" data-track-index="3" data-volume="1.0" src="assets/sfx/key-1.wav"></audio>
+      <audio id="sfx-a1-snap-2" class="clip" data-start="3.989" data-duration="0.13" data-track-index="5" data-volume="0.8" src="assets/sfx/key-4.wav"></audio>
+      <audio id="sfx-a2-push-off" class="clip" data-start="4.289" data-duration="0.13" data-track-index="3" data-volume="0.5" src="assets/sfx/key-3.wav"></audio>
+      <audio id="sfx-a2-charlie-0" class="clip" data-start="5.208" data-duration="0.13" data-track-index="3" data-volume="0.8" src="assets/sfx/key-1.wav"></audio>
+      <audio id="sfx-a2-charlie-1" class="clip" data-start="5.472" data-duration="0.13" data-track-index="3" data-volume="0.8" src="assets/sfx/key-2.wav"></audio>
+      <audio id="sfx-a2-charlie-2" class="clip" data-start="5.737" data-duration="0.13" data-track-index="3" data-volume="0.8" src="assets/sfx/key-3.wav"></audio>
+      <audio id="sfx-a2-charlie-3" class="clip" data-start="6.002" data-duration="0.13" data-track-index="3" data-volume="0.8" src="assets/sfx/key-4.wav"></audio>
+      <audio id="sfx-a2-charlie-4" class="clip" data-start="6.267" data-duration="0.13" data-track-index="3" data-volume="0.8" src="assets/sfx/key-5.wav"></audio>
+      <audio id="sfx-a2-charlie-5" class="clip" data-start="6.532" data-duration="0.13" data-track-index="3" data-volume="0.8" src="assets/sfx/key-1.wav"></audio>
+      <audio id="sfx-a2-charlie-6" class="clip" data-start="6.797" data-duration="0.13" data-track-index="3" data-volume="0.8" src="assets/sfx/key-2.wav"></audio>
+      <audio id="sfx-a2-dot-in-g" class="clip" data-start="7.312" data-duration="0.309" data-track-index="3" data-volume="0.45" data-playback-rate="1.1" src="assets/sfx/trek-hail.mp3"></audio>
+      <audio id="sfx-a2-studio-0" class="clip" data-start="7.376" data-duration="0.13" data-track-index="4" data-volume="0.6" src="assets/sfx/key-3.wav"></audio>
+      <audio id="sfx-a2-studio-1" class="clip" data-start="7.509" data-duration="0.13" data-track-index="4" data-volume="0.6" src="assets/sfx/key-4.wav"></audio>
+      <audio id="sfx-a2-studio-2" class="clip" data-start="7.641" data-duration="0.13" data-track-index="3" data-volume="0.6" src="assets/sfx/key-5.wav"></audio>
+      <audio id="sfx-a2-studio-3" class="clip" data-start="7.774" data-duration="0.13" data-track-index="3" data-volume="0.6" src="assets/sfx/key-1.wav"></audio>
+      <audio id="sfx-a2-studio-4" class="clip" data-start="7.906" data-duration="0.13" data-track-index="3" data-volume="0.6" src="assets/sfx/key-2.wav"></audio>
+      <audio id="sfx-a2-studio-5" class="clip" data-start="8.038" data-duration="0.13" data-track-index="3" data-volume="0.6" src="assets/sfx/key-3.wav"></audio>
+      <audio id="sfx-a2-dot-off" class="clip" data-start="8.527" data-duration="0.5" data-track-index="3" data-volume="0.35" src="assets/sfx/trek-chirp.mp3"></audio>
+      <audio id="sfx-a2-disc-sweep" class="clip" data-start="9.103" data-duration="0.57" data-track-index="3" data-volume="0.9" src="assets/sfx/whoosh-short.mp3"></audio>
+      <audio id="sfx-a2-icon-forms" class="clip" data-start="9.294" data-duration="1.25" data-track-index="4" data-volume="0.4" src="assets/sfx/trek-program-complete.mp3"></audio>
+      <audio id="sfx-end-punch-1" class="clip" data-start="10.527" data-duration="0.13" data-track-index="3" data-volume="1.0" src="assets/sfx/key-4.wav"></audio>
+      <audio id="sfx-end-punch-1b" class="clip" data-start="10.527" data-duration="0.13" data-track-index="5" data-volume="0.7" src="assets/sfx/key-1.wav"></audio>
+      <audio id="sfx-end-punch-2" class="clip" data-start="11.047" data-duration="0.13" data-track-index="3" data-volume="0.8" src="assets/sfx/key-2.wav"></audio>
     </div>
     <script>
       window.__timelines = window.__timelines || {};

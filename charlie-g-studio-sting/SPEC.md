@@ -2,15 +2,17 @@
 
 GOAL:    the dot is the character: it bounces the wordmark into being, lands in the G, then returns as a
          big disc that swallows the wordmark and becomes the icon. The viewer remembers the icon.
-REFERENCE: a Fiverr logo animation (screen recording, clean half from 4.20 s). Its grammar and timing, not its
+REFERENCE: a Fiverr logo animation (screen recording, clean half from 4.20 s); its music is no longer used. Its grammar and timing, not its
          content: first mark drawn, a dot bouncing along the baseline with a thin trail raising each letter, the dot
          landing as the full stop, a hold, the dot hopping off right, returning as a big circle that sweeps left over
          the wordmark and becomes the icon, which slides to centre and holds.
 OUTPUT:  HyperFrames, 1920 x 1080, 60 fps, 11.81 s (709 frames).
-TIME:    the soundtrack is the reference's whole audio (0-9.70 s of the recording). Its first 4 s are a quiet build-up
-         (act 1); the beat drops at ~4.1 s and hits land every ~0.27 s. Act 2 starts at 4.20 s, exactly where the
-         reference's clean pass starts. The beat grid is 0.26483 s from 5.199 s; the two bars 5.199-7.318 s play
-         twice, so the text loads one letter per beat and every later beat is shifted by those two bars (+2.119 s).
+TIME:    no music. The timing grid is kept from the reference soundtrack it was first cut to: beats every 0.26483 s
+         from 5.199 s, the text loading one letter per beat. Every visible action has its own sound effect.
+SOUND:   keyboard clacks for the dot's landings, every letter, the punches and the snap; Star Trek interface beeps
+         for the blocks locking in (beep), the G completing and the dot landing in it (hail), the tension (data
+         stream), the dot flying off (chirp) and the icon forming (program complete); one whoosh for the disc sweep.
+         Each placed so its hit lands one frame after its picture.
 LOOK:    ground #1C1C1C, ink #FFFFFF, exactly the supplied PNGs. Monochrome: no accent added.
          Logo pieces traced from the PNGs (wordmark: 17 pieces, mean error 0.23/255; icon: 4 pieces, 0.08/255).
          Lockup at 1:1 of the PNG: 1347 px wide (70% of the frame), cap height 92 px, centred.
@@ -38,7 +40,7 @@ SHOTS:
   9.27-9.65  the disc becomes the icon's dot as the blocks grow round it; the icon slides to centre.
   ENDING
   10.52, 11.04 the icon punches (1.05x, 1.03x) on the last two hits, rhyming with act 1.
-  11.04-11.81 hold; the music fades out over the last 0.45 s.
+  11.04-11.81 hold to the end.
 BANNED:  glow, particles, gradients, any colour not in the logo, fades standing in for motion, drifting after landing.
 QA:      4.6, 5.2, 6.1, 7.0, 7.6, 8.0, 8.6, 9.2, 9.5, 10.55, 11.5 s; the lockup at 8.3 s against the logo PNG and the
          icon at 11.2 s against the icon PNG.
