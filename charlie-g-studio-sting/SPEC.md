@@ -27,9 +27,10 @@ SHOTS:
   1.92-2.12  the lower-right block slides in from the right and closes the G.
   2.30, 2.60 the G punches (1.05x) on two hits.
   2.75-3.98  the four pieces pull apart as the music builds, then snap back together on the drop (power4.in).
-  3.98-4.20  the snap flings the dot off the top left; the G shrinks (0.366x) into its place in the wordmark.
+  3.98-4.20  the G, dot included, shrinks (0.366x) into its place in the wordmark.
   ACT 2, from the drop: the previous film, every time + 4.20 s
-  4.80-5.70  the dot falls back in from the upper left and bounces CHARLIE up; drops into the G.
+  4.28-5.05  the dot pushes off from its slot and arcs high to the left, never leaving the frame.
+  5.05-5.70  it bounces CHARLIE up and drops back into the G.
   5.72-5.92  the landing cascades STUDIO in.        hold to 6.40.
   6.40-6.75  the dot hops off the right edge.
   6.80-7.15  it returns as a 340 px disc and sweeps the wordmark away.

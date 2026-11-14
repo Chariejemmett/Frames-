@@ -13,8 +13,8 @@
 
 - Extended to the length of the supplied video. A new first act plays over the soundtrack's quiet build-up: the dot
   drops in alone, the G's three blocks arrive one by one, the big G punches on two hits, its pieces pull apart as the
-  music builds and snap together on the drop, and the G shrinks into its place in the wordmark as the dot is flung
-  away. The original animation follows unchanged from 4.2 s. On the last two hits the icon punches again.
+  music builds and snap together on the drop, and the G shrinks into its place in the wordmark. The dot
+  then hops out of the G in one long arc to where it starts bouncing the letters in; it never leaves the frame. From there the original animation plays on its original hits. On the last two hits the icon punches again.
 
 ## Sound
 - The soundtrack is the reference's whole audio, 0-9.70 s of the screen recording, in
@@ -33,6 +33,5 @@
 - `first_frame_empty`: the film opens on the empty ground; the dot drops in at 0.3 s.
 
 ## Weakest moment
-- 4.2-4.8 s: the small G sits alone for 0.6 s before the dot returns; a stretch the reference also has.
 - 7.08-7.15 s: the disc's sweep is so fast that motion blur turns it into a soft smear for about four frames, as in the
   reference. Slowing the sweep from 0.15 s to 0.25 s would show the disc more clearly at the cost of the snap.

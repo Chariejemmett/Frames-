@@ -67,13 +67,13 @@
       const BASE = 585 - 15.5;  // dot centre resting on the baseline
       // [t0, t1, from, to, arc height (px, 0 = a fall)]
       const HOPS = [
-        [0.60, 0.85, [-60, 200], [380, BASE], 0],
+        [0.08, 0.85, HOME, [380, BASE], 380],   // out of the G's slot, one long arc left to where the bouncing starts
         [0.85, 1.05, [380, BASE], [572, BASE], 110],
         [1.05, 1.24, [572, BASE], [730, BASE], 95],
         [1.24, 1.50, [730, BASE], HOME, 170],
         [2.20, 2.55, HOME, [2060, 330], 200],
       ].map(([t0, t1, p, q, h]) => [t0 + A2, t1 + A2, p, q, h]);
-      const TOUCH = [0.85, 1.05, 1.24, 1.50].map((t) => t + A2);
+      const TOUCH = [0.08, 0.85, 1.05, 1.24, 1.50].map((t) => t + A2);  // 0.08: push-off from the slot
       function dotAt(t) {
         if (t < HOPS[0][0]) return HOPS[0][2];
         let last = HOPS[0][2];
@@ -110,6 +110,7 @@
       // ---- initial state (frame 0)
       const hero = ["#cg-h-g1", "#cg-h-g2", "#cg-h-g3"];
       gsap.set(small, { scale: 1, opacity: 0 });
+      gsap.set(dotEl, { opacity: 0 });
       gsap.set(letters, { scaleX: 0.5, scaleY: 0, y: 10, opacity: 1 });
       gsap.set("#cg-big", { x: -540 });
       gsap.set(big, { scale: 0 });
@@ -156,11 +157,11 @@
         ft(sel, { x: 0, y: 0, rotation: 0 }, { x: dx, y: dy, rotation: r, duration: 1.1, ease: "power2.inOut" }, 2.75);
         ft(sel, { x: dx, y: dy, rotation: r }, { x: 0, y: 0, rotation: 0, duration: 0.12, ease: "power4.in" }, 3.86);
       });
-      // the snap flings the dot up and off the top left, and the G shrinks into its place in the wordmark
-      ft("#cg-h-dot", { x: 0, y: 0 }, { x: -900, y: -760, duration: 0.3, ease: "power2.out" }, 3.98);
+      // the G, dot included, shrinks into its place in the wordmark; the small dot takes over in the same spot
       ft("#cg-hero", { x: 0, scale: 1 }, { x: 33.5, scale: 0.3663, duration: 0.22, ease: "power3.inOut" }, 3.98);
       tl.set("#cg-hero", { opacity: 0 }, A2);
       tl.set(small, { opacity: 1 }, A2);
+      tl.set(dotEl, { opacity: 1 }, A2);
 
       // ======== ACT 2 (4.2-7.5 s): the Fiverr-style build, on the reference's own hits ========
       const POP = [0.82, 0.88, 1.02, 1.08, 1.21, 1.26, 1.31, 1.52, 1.56, 1.60, 1.64, 1.68, 1.72].map((t) => t + A2);
