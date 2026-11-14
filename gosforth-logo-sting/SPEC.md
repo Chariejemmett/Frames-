@@ -3,8 +3,8 @@
 GOAL:    the viewer meets the mark as a character and remembers the lockup it builds: "// GOSFORTH ROOFING".
 REFERENCE: a LinkedIn logo reel (screen recording). Its grammar, not its content: a whip in with a heavy
          horizontal smear, the mark acting like a character, a loose dot knocked out of it, the wordmark
-         popping out letter by letter beside the mark, the dot falling home last, a hold, a whip out.
-OUTPUT:  HyperFrames, 1920 x 1080, 60 fps, 6.4 s (384 frames). Starts and ends on the empty ground, so it loops.
+         popping out letter by letter beside the mark, the dot falling home last, a hold. Extended: a pattern built from the mark, ending on the icon alone.
+OUTPUT:  HyperFrames, 1920 x 1080, 60 fps, 11 s (660 frames). Starts on the empty ground, ends on the icon alone.
 LOOK:    ground #FFFFFF, ink #0E0E0E (wordmark), accent #F03535 (mark: two slashes and the dot).
          The logo is the brand's own artwork, traced from the supplied PNG to vectors (mean alpha error 0.4/255),
          one path per piece: 2 slashes, 1 dot, 15 letters. No added type, no effects, no grain.
@@ -27,9 +27,15 @@ SHOTS (one continuous shot, camera at 2.4x then pulling back to 1x):
   3.55-3.85  the dot falls back in from the top and hits the right slash; the mark dips, a ripple runs
              through the letters.                                                      click
   3.85-4.38  the dot bounces once and lands on its home corner, squashes, settles.       pop (the payoff)
-  4.40-5.80  hold, dead still (1.4 s).
-  5.80-6.30  whip out to the right, letters leaving first, mark last.                    whoosh
-BANNED:  glow, particles, gradients, a dark void; fading anything in; the logo redrawn or re-typed;
+  4.40-5.60  hold, dead still.
+  5.60-6.45  the letters sink back into the baseline, right to left; the mark slides back to centre.  woosh (supplied)
+  6.35-7.00  copies of the "//" ripple out from the mark into a full-frame brick pattern: rows alternate
+             red and ink like courses of roof tiles (190 x 150 px grid, 104 tiles).               cinematic whoosh
+  7.05-7.65  every row but the mark's slides one tile, alternate rows in opposite directions.         whoosh
+  7.70-8.50  a flip wave runs along the slant: each pair turns a half turn and lands identical.         woosh (supplied)
+  8.55-9.60  the pattern collapses inward, farthest tiles first, while the camera pushes in 3x.
+  9.60-11.0  the icon lands alone, settles, and holds to the end (1.4 s).                             bass hit
+BANNED:  glow, particles (the pattern is the mark itself, never decoration), gradients, a dark void; fading anything in; the logo redrawn or re-typed;
          titles drifting after they land; a docked corner logo; bounce on the lockup during the hold.
 QA:      frames at 0.30, 0.62, 1.30, 1.56, 2.00, 2.70, 3.20, 3.86, 4.40, 5.00, 6.00; the final lockup at 5.0 s
          must match the supplied PNG; every piece in frame after 3.6 s.
