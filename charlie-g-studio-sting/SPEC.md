@@ -10,8 +10,8 @@ OUTPUT:  HyperFrames, 1920 x 1080, 60 fps, 11.81 s (709 frames).
 TIME:    no music. The timing grid is kept from the reference soundtrack it was first cut to: beats every 0.26483 s
          from 5.199 s, the text loading one letter per beat. Every visible action has its own sound effect.
 SOUND:   keyboard clacks for the dot's landings, every letter, the punches and the snap; Star Trek interface beeps
-         for the blocks locking in (beep), the G completing and the dot landing in it (hail), the tension (data
-         stream), the dot flying off (chirp) and the icon forming (program complete); one whoosh for the disc sweep.
+         for the blocks locking in (beep), the G completing and the dot landing in it (hail), a riser under the
+         pull-apart cut off by a sub-bass hit on the snap, the dot flying off (chirp) and the icon forming (program complete); one whoosh for the disc sweep.
          Each placed so its hit lands one frame after its picture.
 LOOK:    ground #1C1C1C, ink #FFFFFF, exactly the supplied PNGs. Monochrome: no accent added.
          Logo pieces traced from the PNGs (wordmark: 17 pieces, mean error 0.23/255; icon: 4 pieces, 0.08/255).
